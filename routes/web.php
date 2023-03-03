@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users', [UsersController::class, 'index'])->name('users.index');
-
+Route::resource('/users', 'App\Http\Controllers\UsersController');
+//Route::post('/users', [UsersController::class, 'store'])->name('users.store');
 
 Auth::routes();
 
